@@ -1,33 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 
 ## --- Base --- ##
-# Getting path of this script file:
-_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+_SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]:-"$0"}")" >/dev/null 2>&1 && pwd -P)"
 _PROJECT_DIR="$(cd "${_SCRIPT_DIR}/.." >/dev/null 2>&1 && pwd)"
 cd "${_PROJECT_DIR}" || exit 2
 
 
-# Loading .env file (if exists):
-if [ -f ".env" ]; then
-	# shellcheck disable=SC1091
-	source .env
-fi
+# shellcheck disable=SC1091
+[ -f .env ] && . .env
 
 
-if [ -z "$(which dot)" ]; then
-	echo "[ERROR]: 'graphiz' not found or not installed!"
+if ! command -v dot >/dev/null 2>&1; then
+	echo "[ERROR]: Not found 'dot' command, please install 'graphviz' first!" >&2
 	exit 1
 fi
 
-if [ -z "$(which python)" ]; then
-	echo "[ERROR]: 'python' not found or not installed!"
+if ! command -v python >/dev/null 2>&1; then
+	echo "[ERROR]: Not found 'python' command, please install it first!" >&2
 	exit 1
 fi
 
-if [ -z "$(which pyreverse)" ]; then
-	echo "[ERROR]: 'pylint' not found or not installed!"
+if ! command -v pyreverse >/dev/null 2>&1; then
+	echo "[ERROR]: Not found 'pyreverse' command, please install 'pylint' first!" >&2
 	exit 1
 fi
 ## --- Base --- ##
@@ -46,33 +42,61 @@ _OUTPUT_DIR=""
 ## --- Variables --- ##
 
 
+## --- Menu arguments --- ##
+_usage_help() {
+	cat <<EOF
+USAGE: ${0} [options]
+
+OPTIONS:
+    -m, --module-name [NAME]    Module name. Default: 'beans_logging'
+    -d, --module-dir [DIR]      Module directory. Default: './src/beans_logging'
+    -o, --output-dir [DIR]      Output directory. Default: './docs/diagrams'
+    -h, --help                  Show this help message.
+
+EXAMPLES:
+    ${0} --module-name my_module01
+    ${0} -m=my_module01 -o=./docs/diagrams
+EOF
+}
+
+while [ $# -gt 0 ]; do
+	case "${1}" in
+		-m | --module-name)
+			[ $# -ge 2 ] || { echo "[ERROR]: ${1} requires a value!" >&2; exit 1; }
+			_MODULE_NAME="${2}"
+			shift 2;;
+		-m=* | --module-name=*)
+			_MODULE_NAME="${1#*=}"
+			shift;;
+		-d | --module-dir)
+			[ $# -ge 2 ] || { echo "[ERROR]: ${1} requires a value!" >&2; exit 1; }
+			_MODULE_DIR="${2}"
+			shift 2;;
+		-d=* | --module-dir=*)
+			_MODULE_DIR="${1#*=}"
+			shift;;
+		-o | --output-dir)
+			[ $# -ge 2 ] || { echo "[ERROR]: ${1} requires a value!" >&2; exit 1; }
+			_OUTPUT_DIR="${2}"
+			shift 2;;
+		-o=* | --output-dir=*)
+			_OUTPUT_DIR="${1#*=}"
+			shift;;
+		-h | --help)
+			_usage_help
+			exit 0;;
+		*)
+			echo "[ERROR]: Failed to parse argument -> ${1}!" >&2
+			_usage_help
+			exit 1;;
+	esac
+done
+## --- Menu arguments --- ##
+
+
 ## --- Main --- ##
 main()
 {
-	## --- Menu arguments --- ##
-	if [ -n "${1:-}" ]; then
-		local _input
-		for _input in "${@:-}"; do
-			case ${_input} in
-				-m=* | --module-name=*)
-					_MODULE_NAME="${_input#*=}"
-					shift;;
-				-d=* | --module-dir=*)
-					_MODULE_DIR="${_input#*=}"
-					shift;;
-				-o=* | --output-dir=*)
-					_OUTPUT_DIR="${_input#*=}"
-					shift;;
-				*)
-					echo "[ERROR]: Failed to parsing input -> ${_input}!"
-					echo "[INFO]: USAGE: ${0}  -m=*, --module-name=* [my_module01] | -d=*, --module-dir=* [./src/my_module01] | -o=*, --output-dir=* [./docs/diagrams]"
-					exit 1;;
-			esac
-		done
-	fi
-	## --- Menu arguments --- ##
-
-
 	if [ -z "${_MODULE_NAME:-}" ]; then
 		_MODULE_NAME="${MODULE_NAME}"
 	else
@@ -115,5 +139,5 @@ main()
 	echo "[OK]: Done."
 }
 
-main "${@:-}"
+main
 ## --- Main --- ##
