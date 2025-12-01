@@ -14,7 +14,7 @@ if ! command -v python >/dev/null 2>&1; then
 fi
 
 if ! python -c "import build" &> /dev/null; then
-	echo "[ERROR]: 'build' python package is not installed!"
+	echo "[ERROR]: 'build' python package is not installed!" >&2
 	exit 1
 fi
 ## --- Base --- ##

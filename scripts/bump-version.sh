@@ -82,12 +82,12 @@ done
 
 
 if [ -z "${_BUMP_TYPE:-}" ]; then
-	echo "[ERROR]: Bump type is empty, use '-b=' or '--bump-type=' argument!"
+	echo "[ERROR]: Bump type is empty, use '-b=' or '--bump-type=' argument!" >&2
 	exit 1
 fi
 
 if [ "${_BUMP_TYPE}" != "major" ] && [ "${_BUMP_TYPE}" != "minor" ] && [ "${_BUMP_TYPE}" != "patch" ]; then
-	echo "[ERROR]: Bump type '${_BUMP_TYPE}' is invalid, should be: 'major', 'minor' or 'patch'!"
+	echo "[ERROR]: Bump type '${_BUMP_TYPE}' is invalid, should be: 'major', 'minor' or 'patch'!" >&2
 	exit 1
 fi
 
@@ -138,7 +138,7 @@ main()
 		if [ "${_IS_TAG}" == true ]; then
 			echo "[INFO]: Tagging 'v${_new_version}'..."
 			if git rev-parse "v${_new_version}" > /dev/null 2>&1; then
-				echo "[ERROR]: 'v${_new_version}' tag is already exists!"
+				echo "[ERROR]: 'v${_new_version}' tag is already exists!" >&2
 				exit 1
 			fi
 			git tag "v${_new_version}" || exit 2
