@@ -18,7 +18,7 @@ if ! command -v gh >/dev/null 2>&1; then
 fi
 
 if ! gh auth status >/dev/null 2>&1; then
-    echo "[ERROR]: You need to login: 'gh auth login'!"
+    echo "[ERROR]: You need to login: 'gh auth login'!" >&2
     exit 1
 fi
 ## --- Base --- ##

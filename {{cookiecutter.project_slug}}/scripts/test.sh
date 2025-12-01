@@ -70,7 +70,7 @@ done
 
 if [ "${_IS_COVERAGE}" == true ]; then
 	if ! python -c "import pytest_cov" &> /dev/null; then
-		echo "[ERROR]: 'pytest-cov' python package is not installed!"
+		echo "[ERROR]: 'pytest-cov' python package is not installed!" >&2
 		exit 1
 	fi
 fi
