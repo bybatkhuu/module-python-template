@@ -191,7 +191,7 @@ def main() -> None:
     # Main example code
     logger.info(f"Items before cleaning: {_items}")
     _my_object = MyClass(items=_items, config=_config)
-    _items = _my_object()
+    _items = _my_object.run()
     logger.info(f"Items after cleaning: {_items}")
 
     logger.info("Done!\n")
