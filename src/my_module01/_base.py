@@ -11,7 +11,6 @@ from .__version__ import __version__
 from . import _utils as utils
 from .config import MyClassConfigPM
 
-
 logger = logging.getLogger(__name__)
 
 

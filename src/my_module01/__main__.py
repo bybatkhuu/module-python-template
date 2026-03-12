@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 from .config import MyClassCliConfig
 from ._base import MyClass
 
-
 load_dotenv(dotenv_path=".env", override=True)
 logger = logging.getLogger(__name__)
 

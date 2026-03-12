@@ -7,7 +7,6 @@ import logging
 # Internal modules
 from my_module01 import MyClass
 
-
 logger = logging.getLogger(__name__)
 
 

@@ -2,7 +2,6 @@ import logging
 
 from pydantic import validate_call
 
-
 logger = logging.getLogger(__name__)
 
 
