@@ -1,5 +1,41 @@
 # Changelog
 
+## v4.0.0 (2026-10-15)
+
+<!-- Release notes generated using configuration in .github/release.yml at v4.0.0 -->
+
+## What's Changed
+### 💥 Breaking Changes
+* ⬆️ Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/53
+* ⬆️ Bump actions/setup-python from 6 to 7 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/57
+### ✨ Features
+* ⬆️ Bump https://github.com/psf/black from 26.1.0 to 26.3.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/51
+* ⬆️ Bump https://github.com/psf/black from 26.3.1 to 26.5.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/52
+* ⬆️ Bump https://github.com/igorshubovych/markdownlint-cli from v0.48.0 to 0.49.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/54
+* chore(deps): bump https://github.com/PyCQA/flake8 from 7.3.0 to 7.4.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/61
+* chore(deps): bump https://github.com/psf/black from 26.5.1 to 26.10.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/62
+* chore(deps): bump https://github.com/asottile/pyupgrade from v3.21.2 to 3.22.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/63
+* Updated 3.10 to 3.11 by @bybatkhuu in https://github.com/bybatkhuu/module-python-template/pull/64
+### 🐛 Fixes
+* ⬆️ Bump https://github.com/PyCQA/bandit from 1.9.3 to 1.9.4 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/50
+* ⬆️ Bump https://github.com/gitleaks/gitleaks from v8.30.0 to 8.30.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/49
+* ⬆️ Bump https://github.com/igorshubovych/markdownlint-cli from v0.49.0 to 0.49.1 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/56
+### 👷 CI/CD
+* Update dependencies including gitleaks, bandit, and black by @bybatkhuu in https://github.com/bybatkhuu/module-python-template/pull/58
+### 📦 Dependencies
+* ⬆️ Update pylint requirement from <4.0.0,>=3.0.4 to >=3.0.4,<5.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/21
+* ⬆️ Update pytest requirement from <9.0.0,>=8.0.2 to >=8.0.2,<10.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/22
+* ⬆️ Update mkdocstrings[python] requirement from <1.0.0,>=0.24.3 to >=0.24.3,<2.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/23
+* ⬆️ Update setuptools requirement from <81.0.0,>=70.3.0 to >=70.3.0,<83.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/24
+* ⬆️ Update setuptools-scm requirement from <10.0.0,>=8.0.4 to >=8.0.4,<11.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/25
+* ⬆️ Update setuptools requirement from <83.0.0,>=70.3.0 to >=82.0.1,<83.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/27
+* ⬆️ Update setuptools requirement from <83.0.0,>=82.0.1 to >=82.0.1,<84.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/55
+* chore(deps): update twine requirement from <7.0.0,>=6.0.1 to >=6.0.1,<8.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/59
+* chore(deps): update setuptools requirement from <84.0.0,>=82.0.1 to >=82.0.1,<85.0.0 by @dependabot[bot] in https://github.com/bybatkhuu/module-python-template/pull/60
+
+
+**Full Changelog**: https://github.com/bybatkhuu/module-python-template/compare/v3.2.1...v4.0.0
+
 ## v3.2.1 (2025-09-17)
 
 <!-- Release notes generated using configuration in .github/release.yml at v3.2.1 -->
