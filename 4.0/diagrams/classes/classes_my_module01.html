@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class MyClass {
+            config
+            items
+            run(items: list[float] | None, threshold: float | None) list[float]
+          }
+          class MyClassCliConfig {
+            items : Optional[list[float]]
+            model_config : SettingsConfigDict
+            settings_customise_sources(settings_cls: type[BaseSettings], init_settings: PydanticBaseSettingsSource, env_settings: PydanticBaseSettingsSource, dotenv_settings: PydanticBaseSettingsSource, file_secret_settings: PydanticBaseSettingsSource) tuple[PydanticBaseSettingsSource, ...]
+          }
+          class MyClassConfigPM {
+            max_length : Optional[int]
+            max_value : Optional[float]
+            min_length : Optional[int]
+            min_value : Optional[float]
+            model_config : ConfigDict
+            threshold : Optional[float]
+          }
+          MyClassCliConfig --|> MyClassConfigPM
+          MyClassConfigPM --* MyClass : config
+  
+       </div>
+  </body>
+</html>

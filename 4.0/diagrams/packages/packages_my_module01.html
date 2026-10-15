@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class my_module01 {
+          }
+          class __main__ {
+          }
+          class __version__ {
+          }
+          class _base {
+          }
+          class _utils {
+          }
+          class config {
+          }
+          my_module01 --> __version__
+          my_module01 --> _base
+          my_module01 --> config
+          __main__ --> _base
+          __main__ --> config
+          _base --> __version__
+          _base --> config
+  
+       </div>
+  </body>
+</html>
