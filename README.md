@@ -37,36 +37,19 @@ This is a template repository for python module projects.
 
 [TIP] Skip this step, if you're going to install the package directly from **PyPi** or **GitHub** repository.
 
-**2.1.** Prepare projects directory (if not exists):
-
 ```sh
-# Create projects directory:
 mkdir -pv ~/workspaces/projects
-
-# Enter into projects directory:
 cd ~/workspaces/projects
+
+# HTTPS:
+git clone https://github.com/bybatkhuu/module-python-template.git
+# Or SSH (development):
+git clone git@github.com:bybatkhuu/module-python-template.git
+
+cd module-python-template
 ```
 
-**2.2.** Follow one of the below options **[A]**, **[B]** or **[C]**:
-
-**OPTION A.** Clone the repository:
-
-```sh
-git clone https://github.com/bybatkhuu/module-python-template.git && \
-    cd module-python-template
-```
-
-**OPTION B.** Clone the repository (for **DEVELOPMENT**: git + ssh key):
-
-```sh
-git clone git@github.com:bybatkhuu/module-python-template.git && \
-    cd module-python-template
-```
-
-**OPTION C.** Download source code:
-
-1. Download archived **zip** file from [**releases**](https://github.com/bybatkhuu/module-python-template/releases).
-2. Extract it into the projects directory.
+Alternatively, download the source from the [releases](https://github.com/bybatkhuu/module-python-template/releases) page and extract it into your projects directory.
 
 ### 3. 📦 Install the package
 
@@ -202,12 +185,6 @@ my_module01:
 ### 🌎 Environment Variables
 
 [**`.env.example`**](./.env.example):
-
-```sh
-# ENV=LOCAL
-# DEBUG=false
-# TZ=UTC
-```
 
 ---
 
